@@ -692,6 +692,7 @@
                 width: 528px;
                 top: 55%;
                 left: 50%;
+                padding: 40px;
                 border-radius: 4px;
                 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
                 background-color: var(--main-background);
@@ -711,11 +712,7 @@
             /*-------------- Modal Form ------------------*/
             
             .modal-form {
-                width: 450px;
-                margin-right: auto;
-                margin-left: auto;
-                padding-top: 40px;
-                padding-bottom: 40px;
+                max-width: 450px;
             }
             
             .form-text {
@@ -731,24 +728,29 @@
                 display: flex;
                 flex-direction: column;
                 position: relative;
+                margin-bottom: 10px;
+            }
+            
+            .form-field.comments {
+                margin-bottom: 20px;
             }
             
             .form-field input {
                 padding: 11px 11px;
                 padding-left: 42px;
-                margin-bottom: 10px;
                 border: 1px solid rgba(33, 33, 33, 0.2);
                 border-radius: 4px;
+                transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
             }
             
             .input-icon {
                 display: inline-block;
                 position: absolute;
-                transform: translatey(-50%);
-                top: 55%;
+                transform: translatey(-65%);
+                top: 65%;
                 left: 15px;
-                width: 18px;
-                height: 18px;
+                width: 12px;
+                height: 12px;
             }
             
             .form-field:focus-within>.input-icon {
@@ -765,12 +767,13 @@
             
             input:hover,
             textarea:hover {
-                border: 1px solid var(--accent-color);
+                border: 2px outset var(--accent-color);
             }
             
             input:focus,
             textarea:focus {
                 outline: 2px var(--accent-color);
+                border: 2px outset var(--accent-color);
             }
             
             .form-field label {
@@ -785,13 +788,14 @@
                 resize: none;
                 height: 120px;
                 padding: 12px 16px;
-                margin-bottom: 20px;
                 border: 1px solid rgba(33, 33, 33, 0.2);
                 border-radius: 4px;
+                transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) 350ms;
             }
             
             textarea:focus-within {
                 border: 1px solid var(--accent-color);
+                border: 2px outset var(--accent-color);
             }
             
             .form-field textarea::placeholder {
@@ -802,7 +806,7 @@
             }
             
             .form-agreement {
-                margin-bottom: 30px;
+                margin-bottom: 36px;
             }
             
             .agreement-checkbox {
@@ -823,6 +827,13 @@
                 height: 15px;
                 border: 2px solid var(--title-color);
                 border-radius: 2px;
+                cursor: pointer;
+                transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+            }
+            
+            .icon-checkbox:hover,
+            .icon-checkbox:focus {
+                border: 4px double #a11300;
             }
             
             .agreement-checkbox:checked+.icon-checkbox {
